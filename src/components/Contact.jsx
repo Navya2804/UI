@@ -2,13 +2,13 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="space-y-6 w-full">
+    <div className="w-full h-full flex flex-col space-y-6">
       <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
         Contact Us
       </h1>
 
       {/* Optional Search Bar */}
-      <div className="flex">
+      <div>
         <input
           type="text"
           placeholder="Search"
@@ -17,8 +17,8 @@ const Contact = () => {
       </div>
 
       {/* Grid Layout */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="space-y-4">
+      <div className="grid md:grid-cols-2 gap-6 w-full">
+        <div className="flex flex-col space-y-4">
           <div>
             <label className="block text-sm font-medium mb-1">Category</label>
             <select
