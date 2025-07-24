@@ -14,27 +14,27 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <div className="flex bg-gray-100 dark:bg-gray-900 min-h-screen">
-        <Router>
+    <Router>
+      <div className={darkMode ? "dark" : ""}>
+        <div className="flex w-screen h-screen overflow-hidden bg-gray-100 dark:bg-gray-900">
           <Sidebar />
-          <div className="flex flex-col flex-1">
+          <div className="flex flex-col flex-1 w-full overflow-hidden">
             <Navbar toggleDark={() => setDarkMode(!darkMode)} />
-            <main className="flex-1 p-4 w-full">
+            <main className="flex-1 w-full p-4 overflow-auto">
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/stock" element={<Stock />} />
-                <Route path="/favorite" element={<Favorite />} />
-                <Route path="/wallet" element={<Wallet />} />
-                <Route path="/community" element={<Community />} />
+                <Route path="/budgeting" element={<Stock />} />
+                <Route path="/planning" element={<Favorite />} />
+                <Route path="/inclusion" element={<Wallet />} />
+                <Route path="/goals" element={<Community />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/contact" element={<Contact />} />
               </Routes>
             </main>
           </div>
-        </Router>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

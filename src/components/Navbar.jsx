@@ -7,8 +7,7 @@ const Navbar = ({ toggleDark }) => {
       <div className="flex gap-4 items-center">
         <ThemeToggle toggleDark={toggleDark} />
         <div className="flex items-center gap-2">
-          <img src="https://via.placeholder.com/30" alt="profile" className="rounded-full" />
-          <span className="text-gray-800 dark:text-white">John Marker Ui</span>
+          <span className="text-gray-800 dark:text-white">FIN-MATRIX</span>
         </div>
       </div>
     </nav>
