@@ -7,8 +7,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useEffect, useMemo, useState } from "react";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Budgeting() {
+  const { t } = useTranslation();
   const [expenseBreakdown, setExpenseBreakdown] = useState([]);
   const [transactions, setTransactions] = useState([]);
   const [filterType, setFilterType] = useState("inflow");
@@ -111,10 +114,11 @@ export default function Budgeting() {
     return transactions.filter((t) => t.transactionType === filterType);
   }, [transactions, filterType]);
 
+  
   return (
     <div className="flex flex-col gap-6 w-full">
       <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-        Budgeting
+        {t('Budgeting')}
       </h1>
 
       {/* Month Filter */}
@@ -136,7 +140,7 @@ export default function Budgeting() {
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-green-100 dark:bg-green-700 p-4 rounded text-green-900 dark:text-green-100">
-          <p className="font-medium">Total Revenue</p>
+          <p className="font-medium">{t('Total Revenue')}</p>
           <h2 className="text-xl font-bold">₹{totalRevenue.toFixed(2)}</h2>
         </div>
         <div className="bg-red-100 dark:bg-red-700 p-4 rounded text-red-900 dark:text-red-100">
@@ -144,7 +148,7 @@ export default function Budgeting() {
           <h2 className="text-xl font-bold">₹{totalExpense.toFixed(2)}</h2>
         </div>
         <div className="bg-blue-100 dark:bg-blue-700 p-4 rounded text-blue-900 dark:text-blue-100">
-          <p className="font-medium">Profit/Loss</p>
+          <p className="font-medium">{t('Profit/Loss')}</p>
           <h2 className="text-xl font-bold">₹{balance.toFixed(2)}</h2>
         </div>
       </div>
@@ -154,7 +158,7 @@ export default function Budgeting() {
         {/* Expense Breakdown */}
         <div className="bg-white dark:bg-gray-800 p-3 rounded shadow">
           <h2 className="text-lg font-medium text-gray-700 dark:text-gray-200 mb-4">
-            Expense Breakdown
+            {t('Expense Breakdown')}
           </h2>
           <ul className="space-y-3">
             {expenseBreakdown.map((item, idx) => (

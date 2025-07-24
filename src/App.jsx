@@ -21,7 +21,7 @@ function App() {
           <Sidebar />
           <div className="flex flex-col flex-1 w-full overflow-hidden">
             <Navbar toggleDark={() => setDarkMode(!darkMode)} />
-            <main className="flex-1 w-full p-4 overflow-auto">
+            <main className="flex-1 w-full p-16 overflow-auto">
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/budgeting" element={<Budgeting />} />
