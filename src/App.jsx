@@ -3,12 +3,13 @@ import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import Stock from "./components/Stock";
-import Favorite from "./components/Favorite";
 import Wallet from "./components/Wallet";
 import Community from "./components/Community";
 import Profile from "./components/Profile";
 import Contact from "./components/Contact";
+import ChatBotWidget from "./components/ChatBotWidget"; 
 import { useState } from "react";
+import Planning from "./components/Planning";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -16,7 +17,7 @@ function App() {
   return (
     <Router>
       <div className={darkMode ? "dark" : ""}>
-        <div className="flex w-screen h-screen overflow-hidden bg-gray-100 dark:bg-gray-900">
+        <div className="relative flex w-screen h-screen overflow-hidden bg-gray-100 dark:bg-gray-900">
           <Sidebar />
           <div className="flex flex-col flex-1 w-full overflow-hidden">
             <Navbar toggleDark={() => setDarkMode(!darkMode)} />
@@ -24,7 +25,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/budgeting" element={<Stock />} />
-                <Route path="/planning" element={<Favorite />} />
+                <Route path="/planning" element={<Planning />} />
                 <Route path="/inclusion" element={<Wallet />} />
                 <Route path="/goals" element={<Community />} />
                 <Route path="/profile" element={<Profile />} />
@@ -32,6 +33,9 @@ function App() {
               </Routes>
             </main>
           </div>
+
+          {/* Chatbot floating widget */}
+          <ChatBotWidget />
         </div>
       </div>
     </Router>
