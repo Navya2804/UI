@@ -21,8 +21,8 @@ const links = [
   { to: '/planning', icon: faLightbulb, label: 'Planning & Suggestions' },
   { to: '/inclusion', icon: faHandshake, label: 'Financial Inclusion' },
   { to: '/goals', icon: faBullseye, label: 'Goals' },
-  { to: '/profile', icon: faUser, label: 'Profile Support' },
-  { to: '/contact', icon: faEnvelope, label: 'Contact Us' },
+  { to: '/profile', icon: faUser, label: 'Personal information' },
+  { to: '/contact', icon: faEnvelope, label: 'Contact Us ' },
 ];
 
   return (
